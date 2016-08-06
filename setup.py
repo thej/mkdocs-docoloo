@@ -22,19 +22,19 @@ from setuptools import setup, find_packages
 
 # Package description
 setup(
-    name = 'mkdocs-material',
+    name = 'mkdocs-docoloo',
     version = '0.2.4',
     url = 'http://squidfunk.github.io/mkdocs-material/',
     license = 'MIT',
     description = 'A material design theme for MkDocs',
-    author = 'Martin Donath',
-    author_email = 'martin.donath@squidfunk.com',
+    author = 'Jochen Greif',
+    author_email = 'jochen@opoloo.de',
     keywords = ['mkdocs', 'documentation', 'theme'],
     packages = find_packages(),
     include_package_data = True,
     entry_points = {
         'mkdocs.themes': [
-            'material = material',
+            'docoloo = docoloo',
         ]
     },
     zip_safe = False

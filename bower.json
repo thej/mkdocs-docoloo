@@ -1,10 +1,11 @@
 {
-  "name": "mkdocs-material",
-  "version": "0.2.4",
-  "description": "A material design theme for MkDocs",
+  "name": "mkdocs-docoloo",
+  "version": "0..1",
+  "description": "A material design theme for MkDocs, based on http://squidfunk.github.io/mkdocs-material/ from squidfunk",
   "homepage": "http://squidfunk.github.io/mkdocs-material/",
   "authors": [
-    "squidfunk <martin.donath@squidfunk.com>"
+    "squidfunk <martin.donath@squidfunk.com>",
+    "Jochen Greif <jochen@opoloo.de>"
   ],
   "license": "MIT",
   "moduleType": [
