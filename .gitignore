@@ -29,6 +29,7 @@ node_modules
 build
 MANIFEST
 site
+^/docoloo
 
 # Distribution files
 dist
