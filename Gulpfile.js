@@ -105,7 +105,7 @@ gulp.task('assets:stylesheets', function() {
       ]))
     .pipe(gulpif(args.sourcemaps, sourcemaps.write()))
     .pipe(gulpif(args.production, mincss()))
-    .pipe(gulp.dest('material/assets/stylesheets/'));
+    .pipe(gulp.dest('docoloo/assets/stylesheets/'));
 });
 
 /*
@@ -127,7 +127,7 @@ gulp.task('assets:javascripts', function() {
     .pipe(concat('application.js'))
     .pipe(gulpif(args.sourcemaps, sourcemaps.write()))
     .pipe(gulpif(args.production, uglify()))
-    .pipe(gulp.dest('material/assets/javascripts/'));
+    .pipe(gulp.dest('docoloo/assets/javascripts/'));
 });
 
 /*
@@ -138,8 +138,8 @@ gulp.task('assets:modernizr', [
   'assets:javascripts'
 ], function() {
   return gulp.src([
-    'material/assets/stylesheets/application.css',
-    'material/assets/javascripts/application.js'
+    'docoloo/assets/stylesheets/application.css',
+    'docoloo/assets/javascripts/application.js'
   ]).pipe(
       modernizr({
         options: [
@@ -153,7 +153,7 @@ gulp.task('assets:modernizr', [
     .pipe(addsrc.append('bower_components/respond/dest/respond.src.js'))
     .pipe(concat('modernizr.js'))
     .pipe(gulpif(args.production, uglify()))
-    .pipe(gulp.dest('material/assets/javascripts'));
+    .pipe(gulp.dest('docoloo/assets/javascripts'));
 });
 
 /*
@@ -168,7 +168,7 @@ gulp.task('assets:static', function() {
         interlaced: true
       })))
     .pipe(addsrc.append('src/assets/{fonts,images}/*.{ico,eot,svg,ttf,woff}'))
-    .pipe(gulp.dest('material/assets/'));
+    .pipe(gulp.dest('docoloo/assets/'));
 });
 
 /*
@@ -191,19 +191,19 @@ gulp.task('assets:views', args.production ? [
     .pipe(compact())
     .pipe(gulpif(args.production,
       addsrc.append([
-        'material/manifest.json',
-        'material/**/*.css'
+        'docoloo/manifest.json',
+        'docoloo/**/*.css'
       ])))
     .pipe(gulpif(args.production, collect()))
     .pipe(ignore.exclude(/manifest\.json$/))
-    .pipe(gulp.dest('material'));
+    .pipe(gulp.dest('docoloo'));
 });
 
 /*
  * Clean outdated revisions.
  */
 gulp.task('assets:revisions:clean', function() {
-  return gulp.src(['material/**/*.{ico,css,js,png,jpg,gif}'])
+  return gulp.src(['docoloo/**/*.{ico,css,js,png,jpg,gif}'])
     .pipe(ignore.include(/-[a-f0-9]{8,}\.(ico|css|js|png|jpg|gif)$/))
     .pipe(vinyl(clean));
 });
@@ -217,12 +217,12 @@ gulp.task('assets:revisions', [
   'assets:javascripts',
   'assets:static'
 ], function() {
-  return gulp.src(['material/**/*.{ico,css,js,png,jpg,gif}'])
+  return gulp.src(['docoloo/**/*.{ico,css,js,png,jpg,gif}'])
     .pipe(ignore.exclude(/-[a-f0-9]{8,}\.(css|js|png|jpg|gif)$/))
     .pipe(rev())
-    .pipe(gulp.dest('material'))
+    .pipe(gulp.dest('docoloo'))
     .pipe(rev.manifest('manifest.json'))
-    .pipe(gulp.dest('material'));
+    .pipe(gulp.dest('docoloo'));
 });
 
 /*
