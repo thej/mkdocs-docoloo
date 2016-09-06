@@ -50,6 +50,7 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: '#'
+      baselevel: 4
 
 # Page tree
 pages:
@@ -57,3 +58,4 @@ pages:
   - Getting started: getting-started.md
   - Customization: customization.md
   - License: license.md
+  - Testing: test.md

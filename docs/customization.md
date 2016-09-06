@@ -43,14 +43,14 @@ The project itself is hosted on GitHub, so the next
 thing you should do is clone the project from GitHub:
 
 ``` sh
-git clone https://github.com/squidfunk/mkdocs-material
+git clone https://github.com/thej/mkdocs-docoloo
 ```
 
 Then you change the directory and install all dependencies specified in the
 `package.json` and `bower.json` with the following command:
 
 ``` sh
-cd mkdocs-material
+cd mkdocs-docoloo
 npm install && bower install
 ```
 
